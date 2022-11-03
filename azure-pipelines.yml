@@ -66,7 +66,9 @@ stages:
           - task: AzureWebApp@1
             displayName: 'Azure Web App Deploy: gs-spring-boot'
             inputs:
-              azureSubscription: $(azureSubscription)
-              appType: webAppLinux
-              appName: $(webAppName)
+              azureSubscription: 'Free Trial (b154ce63-1c54-4e89-a530-fde4493d04d7)'
+              appType: 'webAppLinux'
+              appName: 'java-springboot-webapp00'
               package: '$(System.ArtifactsDirectory)/drop/**/target/*.?(war|jar)'
+              runtimeStack: 'JAVA|8-jre8'
+              startUpCommand: 'java -jar /home/site/wwwroot/gs-spring-boot-0.1.0.jar --server.port=80'
